@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "id": "104c46c9-aad3-413d-b53f-bd2d42d1deae",
+      "name": "Antony",
+      "age": "20",
+      "country": "USA",
+      "email": "test@asddsf.sdf",
+      "phone": "+301243521"
+    }
+  ]
+}

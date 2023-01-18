@@ -1,0 +1,55 @@
+<div class="demo-button-container">
+  <button mat-raised-button (click)="addEditUser(null)" color="primary">
+    Add User
+  </button>
+</div>
+
+<table mat-table [dataSource]="users$" class="mat-elevation-z8 demo-table">
+  <!-- No Column -->
+  <ng-container matColumnDef="no">
+    <th mat-header-cell *matHeaderCellDef>No.</th>
+    <td mat-cell *matCellDef="let user; let i = index;">{{i+1}}</td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let user">{{user?.name}}</td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let user">{{user?.age}}</td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef>Country</th>
+    <td mat-cell *matCellDef="let user">{{user?.country}}</td>
+  </ng-container>
+
+	<!-- action Column -->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let user">
+			<button
+				mat-raised-button
+				color="primary"
+				(click)="addEditUser(user)"
+				class="edit">
+			Edit
+		</button>
+		<button
+				mat-raised-button
+				color="warn"
+				(click)="deleteUser(user?.id)"
+				class="delete">
+			Delete
+		</button>
+		</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
