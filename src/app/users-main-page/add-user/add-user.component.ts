@@ -1,3 +1,4 @@
+import { invokeUpdateUserAPI } from './../store/user.action';
 import { UsersService } from './../users/users.service';
 import { User } from './../store/user';
 import { Component } from '@angular/core';
@@ -49,8 +50,11 @@ export class AddUserComponent {
   }
  
   save(form: FormGroup) {
-    if (!this.userSrv.selectUser) {form.value.id = crypto.randomUUID()}
-    this.store.dispatch(invokeSaveNewUserAPI({ newUser: form.value }));
+    if (!this.userSrv.selectUser) {
+      form.value.id = crypto.randomUUID();
+      this.store.dispatch(invokeSaveNewUserAPI({ newUser: form.value }));
+    }
+    this.store.dispatch(invokeUpdateUserAPI({ updateUser: form.value }));
     let apiStatus$ = this.appStore.pipe(select(selectAppState));
     apiStatus$.subscribe((apState) => {
       if (apState.apiStatus == 'success') {
