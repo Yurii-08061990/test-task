@@ -31,11 +31,15 @@ export class AddUserComponent {
     email: new FormControl(null, Validators.required),
     phone: new FormControl(null, Validators.required),
   });
+
+  isUser: boolean = false;
  
   ngOnInit(): void {
     if (this.userSrv.selectUser) {
-      console.log(this.userSrv.selectUser);
       this.userForm.setValue(this.userSrv.selectUser);
+      this.isUser = true;
+    } else {
+      this.isUser = false;
     }
   }
 

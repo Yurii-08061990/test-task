@@ -11,7 +11,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
 import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserEffect } from './store/user.effect';
 import { userReducer } from './store/user.reducer';
 import { UsersListComponent } from './users-list/users-list.component';
@@ -24,7 +23,6 @@ import { ModalComponent } from './modal/modal.component';
     UsersMainPageComponent,
     UsersListComponent,
     AddUserComponent,
-    EditUserComponent,
     ModalComponent,
   ],
   imports: [
@@ -45,7 +43,6 @@ import { ModalComponent } from './modal/modal.component';
     UsersMainPageComponent,
     UsersListComponent,
     AddUserComponent,
-    EditUserComponent,
   ],
 })
 export class UsersMainPageModule { }

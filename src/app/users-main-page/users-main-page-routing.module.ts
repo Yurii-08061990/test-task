@@ -1,4 +1,3 @@
-import { EditUserComponent } from './edit-user/edit-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { NgModule } from '@angular/core';
@@ -12,10 +11,6 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
-  },
-  {
-    path: 'edit-user/:id',
-    component: EditUserComponent,
   },
 ];
 

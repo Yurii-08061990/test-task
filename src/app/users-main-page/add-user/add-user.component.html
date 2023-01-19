@@ -2,7 +2,7 @@
 	<mat-card>
 		<mat-card-header>
 			<form [formGroup]="userForm" class="form">
-				<div class="header">Create User</div>
+				<div class="header">{{isUser ? 'Update' : 'Create'}} User</div>
 				<mat-form-field appearance="fill" style="display: none">
 					<mat-label></mat-label>
 					<input matInput placeholder="Yurii" formControlName="id">
@@ -30,7 +30,7 @@
 			</form>
 		</mat-card-header>
 		<mat-card-actions align="end">
-			<button mat-button (click)="save(userForm)">Create</button>
+			<button mat-button (click)="save(userForm)">{{isUser ? 'Update' : 'Create'}}</button>
 			<button mat-button (click)="cancel()">Cancel</button>
 		</mat-card-actions>
 	</mat-card>
