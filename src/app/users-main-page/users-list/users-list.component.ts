@@ -1,7 +1,7 @@
 import { ModalComponent } from './../modal/modal.component';
 import { UsersService } from './../users/users.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { invokeDeleteUserAPI, invokeUsersAPI } from '../store/user.action';
 import { selectUsers } from '../store/user.selector';
@@ -14,7 +14,8 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss']
+  styleUrls: ['./users-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersListComponent implements OnInit {
 

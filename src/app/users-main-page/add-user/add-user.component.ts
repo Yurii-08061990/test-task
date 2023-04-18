@@ -1,7 +1,7 @@
 import { invokeUpdateUserAPI } from './../store/user.action';
 import { UsersService } from './../users/users.service';
 import { User } from './../store/user';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Appstate } from 'src/app/shared/store/appstate';
@@ -13,7 +13,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss']
+  styleUrls: ['./add-user.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddUserComponent {
 
